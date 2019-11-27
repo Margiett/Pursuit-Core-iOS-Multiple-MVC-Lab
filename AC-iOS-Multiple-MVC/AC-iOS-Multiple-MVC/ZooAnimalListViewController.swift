@@ -25,11 +25,12 @@ class ZooAnimalListViewController: UIViewController {
     didSetAnimal = ZooAnimal.getAnimals()
 
     tableView.dataSource = self
-
+    tableView.delegate = self
 
 }
    //MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //code
         guard let animalVC = segue.destination as? DetailViewController,let indexPath = tableView.indexPathForSelectedRow else {
 
             return
